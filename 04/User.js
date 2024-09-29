@@ -4,7 +4,7 @@ export default class User {
     this.password = password;
     this.validateEmail(this.email);
     this.validatePassword(this.password);
-    this.login()
+    this.login();
   }
 
   getEmail() {
@@ -24,24 +24,24 @@ export default class User {
   }
 
   validatePassword(password) {
-    if (password !== 'pw123456') {
+    if (password !== "pw123456") {
       throw new Error("Hasło niepoprawne");
     }
   }
 
   validateDomain(email) {
-    const allowed = ['devmentor.pl']
-    const domain = email.split('@')[1]
-    const isValid = allowed.includes(domain)
+    const allowed = ["devmentor.pl"];
+    const domain = email.split("@")[1];
+    const isValid = allowed.includes(domain);
     if (isValid) {
-      return true
+      return true;
     }
   }
 
   login() {
-    if(this.validateDomain(this.email)) {
-      return true
+    if (this.validateDomain(this.email)) {
+      return true;
     }
+    return false;
   }
-
 }
