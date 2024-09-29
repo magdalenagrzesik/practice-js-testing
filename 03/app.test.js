@@ -5,4 +5,10 @@ describe('randomNumber', () =>{
     const result = randomNumber(1,1);
     expect(result).toBe(1)
   })
+  it('throw error when range is NaN', () => {
+    function runRandomNumber() {
+      randomNumber('test')
+    }
+    expect(runRandomNumber).toThrow()
+  })
 })
