@@ -11,4 +11,11 @@ describe('randomNumber', () =>{
     }
     expect(runRandomNumber).toThrow()
   })
+  it('throw error when min > max', () => {
+    function runRandomNumber() {
+      randomNumber(4,3)
+    }
+    expect(runRandomNumber).toThrow()
+  })
+
 })
