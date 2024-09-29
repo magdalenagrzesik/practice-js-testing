@@ -17,5 +17,15 @@ describe('randomNumber', () =>{
     }
     expect(runRandomNumber).toThrow()
   })
+  it('return number from range min-max', () => {
+    const min = -10;
+    const max = -1;
+    const numberOfTry = 1000;
 
+    for (let i = 0; i < numberOfTry; i++) {
+      const result = randomNumber(min, max);
+      expect(result).toBeGreaterThanOrEqual(min);
+      expect(result).toBeLessThanOrEqual(max);
+    }
+  })
 })
